@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+	<head>
+	
+	<meta charset = "UTF-8">
+	<meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+	<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+	<link rel="stylesheet" href= "styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<title>Rafay's Portfolio Website</title>
+
+	</head>
+	
+	<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loaded");
+  });
+
+  
+  const links = document.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      const target = this.getAttribute("href");
+      if (target && target.includes(".html")) {
+        e.preventDefault();
+        document.body.classList.remove("loaded");
+        setTimeout(() => {
+          window.location.href = target;
+        }, 400); 
+      }
+    });
+  });
+</script>
+
+
+	<body>
+
+		
+		<video class = "bg-video" autoplay muted loop>
+		<source src = "C:\Users\abdul\OneDrive\Documents\Docs\Html classwork\neonvid.MP4">
+		Your browser does not support the video.
+		</video>
+		<div class="overlay"></div>
+		
+		<div class = "mydiv">
+		<div class="portfolio-banner">
+		My Portfolio Website
+		</div>
+		<img src = "C:\Users\abdul\OneDrive\Documents\Docs\Html classwork\pic.JPG " width = "200" height = "200" alt = "Portrait of Abdul Rafay">
+			<div class = "mydiv2"><h1 class = "headers">
+				Abdul Rafay
+			</h1>
+			</div>
+	
+		</div>
+		
+		
+	<h1 id="greeting" class="animate__animated animate__fadeInDown" style="color: white; text-shadow: 2px 2px 6px #000; font-size: 50px; margin-top: 100px;"></h1>
+
+	<script>
+  function setGreeting() {
+    const greetingElement = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    let greetingText = "";
+
+    if (hour < 12) {
+      greetingText = "Good Morning!";
+    } else if (hour < 18) {
+      greetingText = "Good Afternoon!";
+    } else {
+      greetingText = "Good Evening!";
+    }
+
+    greetingElement.textContent = greetingText;
+  }
+
+  document.addEventListener("DOMContentLoaded", setGreeting);
+</script>
+
+		
+		
+		
+		<div  class="button-container">
+			<button onclick="location.href='Aboutme.html'"> About Me </button>
+			<button onclick="location.href='Certifications.html'"> Cetifications </button>
+			<button onclick="location.href='Resume.html'"> Resume </button>
+			<button onclick="location.href='Sociallinks.html'"> Social links </button>
+		</div>
+		
+		
+
+	</body>
+	
+</html>
